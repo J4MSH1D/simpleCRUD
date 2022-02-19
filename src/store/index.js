@@ -21,6 +21,7 @@ const store = createStore({
         context.commit("setUsers", e.message);
       }
     },
+    async addUser(context, payload)
   },
 });
 
