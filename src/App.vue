@@ -4,14 +4,11 @@
   </div>
 </template>
 <script>
-import { computed } from '@vue/runtime-core';
-import { useStore } from "vuex"
-
+import { gettingUsers } from "./composables/getUsers"
   export default {
     name: "App",
     setup(){
-      const store = useStore();
-      const users = computed(()=> store.state.users)
+      const { users } = gettingUsers()
       
       return {
         users
