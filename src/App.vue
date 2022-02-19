@@ -1,8 +1,8 @@
 <template>
   <div class="app">
     <div class="form">
-      <div><label for="name">Name</label><input type="text" id="name"></div>
-      <div><button>add</button></div>
+      <div><label for="name">Name</label><input type="text" id="name" v-model="input"></div>
+      <div><button @click="add({fullName: input})">add</button></div>
     </div>
     <div class="list">
       <div>
@@ -21,16 +21,18 @@
   </div>
 </template>
 <script>
-
+import { ref } from "@vue/reactivity"
 import {gettingUsers} from "./composables/getUsers"
   export default {
     name: "App",
     setup(){
       const { users } = gettingUsers()
 
+      const input = ref("")
 
       return {
-        users
+        users,
+        input,
       }
     }
   }
