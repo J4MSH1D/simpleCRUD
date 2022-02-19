@@ -5,7 +5,7 @@ const store = createStore({
         return {
             users: null
         }
-    } 
+    }
 })
 
 
