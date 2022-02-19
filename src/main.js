@@ -12,4 +12,4 @@ import store from './store'
 
 
 
-createApp(App).use(ElementPlus).use(store).mount('#app')
+createApp(App).use(store).mount('#app')
