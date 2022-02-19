@@ -24,6 +24,4 @@ const store = createStore({
   },
 });
 
-store.dispatch("getUsers");
-
 export default store;
