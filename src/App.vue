@@ -14,7 +14,7 @@
         <div>{{user.id}}</div>
         <div class="listOfUsersName">{{user.fullname}}</div>
         <div class="listOfUsersButtons">
-          <button>Delete</button>
+          <button @click="deletingUser(user.id)">Delete</button>
         </div>
       </div>
     </div>
@@ -24,6 +24,7 @@
 import { ref } from "@vue/reactivity"
 import { gettingUsers } from "./composables/getUsers"
 import { addUser } from "./composables/addUser"
+import { deleteUser } from "./composables/deleteUser"
   export default {
     name: "App",
     setup(){
@@ -31,15 +32,20 @@ import { addUser } from "./composables/addUser"
 
       const input = ref("")
 
-      async function addingUser() {
-        await addUser(input)
+      function addingUser() {
+        addUser(input)
         input.value = ""
+      }
+
+      function deletingUser(data) {
+        deleteUser(data)
       }
 
       return {
         users,
         input,
-        addingUser
+        addingUser,
+        deletingUser
       }
     }
   }

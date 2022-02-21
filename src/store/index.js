@@ -15,7 +15,8 @@ const store = createStore({
       state.users.push(payload);
     },
     deleteUser(state, payload) {
-      state.users.splice(payload, 1)
+      let obj = state.users.findIndex((user) => user.payload)
+      state.users.splice(obj, 1)
     }
   },
   actions: {
@@ -42,7 +43,7 @@ const store = createStore({
     },
     async deleteUser(context, payload) {
       try {
-        let id = payload._value
+        let id = payload
         await axios.delete("users/"+id)
         context.commit("deleteUser", id)
       } catch(err) {
