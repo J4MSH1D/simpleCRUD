@@ -45,6 +45,8 @@ button {
   font-weight: 700;
   font-size: 14px;
   text-transform: uppercase;
+  -webkit-transition: 0.3s ease-in-out;
+  transition: 0.3s ease-in-out;
 }
 
 .app .list {
@@ -88,7 +90,15 @@ button {
   font-size: 13px;
   cursor: pointer;
   background: crimson;
+  border: 2px solid crimson;
   color: #fff;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+.app .listOfUsers button:hover {
+  background: #fff;
+  color: crimson;
 }
 
 .app .listOfUsersName {

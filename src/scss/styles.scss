@@ -31,6 +31,7 @@ button {cursor: pointer;}
             font-weight: 700;
             font-size: 14px;
             text-transform: uppercase;
+            transition: 0.3s ease-in-out;
         }
     }
     .list {
@@ -58,7 +59,13 @@ button {cursor: pointer;}
             font-size: 13px;
             cursor: pointer;
             background: crimson;
+            border: 2px solid crimson;
             color: #fff;
+            transition: all 0.3s ease-in-out;
+            &:hover {
+                background: #fff;
+                color: crimson;
+            }
         }
     }
     .listOfUsersName {

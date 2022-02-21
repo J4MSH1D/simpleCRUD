@@ -3,7 +3,7 @@
     <div class="form">
       <div>
         <label for="name">Name</label>
-        <input type="text" id="name" v-model="input" />
+        <input type="text" id="name" v-model="input" @keydown.enter="addingUser" />
       </div>
       <div>
         <button @click="addingUser">Add</button>
