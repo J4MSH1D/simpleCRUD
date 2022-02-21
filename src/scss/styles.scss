@@ -23,6 +23,7 @@ button {cursor: pointer;}
         background-color: rgb(35, 124, 165);
         width: 100vw;
         button {
+            border: 2px solid #fff !important;
             background-color:#fff;
             padding: 8px 30px;
             color: #237ca5;
@@ -32,6 +33,17 @@ button {cursor: pointer;}
             font-size: 14px;
             text-transform: uppercase;
             transition: 0.3s ease-in-out;
+            &:hover {
+                background-color: #237ca5;
+                color: #fff;
+            }
+        }
+        input {
+            padding: 5px 12px 5px 5px;
+            border-radius: 10px;
+            border:none;
+            outline: none;
+            margin-left: 15px;
         }
     }
     .list {
