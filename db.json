@@ -1,36 +1,12 @@
 {
   "users": [
     {
-      "fullname": "dsfasdlfls",
-      "id": 8
+      "fullname": "John Doe",
+      "id": 1
     },
     {
-      "fullname": "asdasdasda",
-      "id": 9
-    },
-    {
-      "fullname": "asdasdsa",
-      "id": 10
-    },
-    {
-      "fullname": "adsasdasd",
-      "id": 11
-    },
-    {
-      "fullname": "asdasd",
-      "id": 14
-    },
-    {
-      "fullname": "asdasd",
-      "id": 17
-    },
-    {
-      "fullname": "asdasdsadaasd",
-      "id": 18
-    },
-    {
-      "fullname": "asdasdasd",
-      "id": 19
+      "fullname": "Doe John",
+      "id": 2
     }
   ]
 }
