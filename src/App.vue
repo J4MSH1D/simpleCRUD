@@ -6,7 +6,7 @@
         <input type="text" id="name" v-model="input" />
       </div>
       <div>
-        <button @click="addingUser">add</button>
+        <button @click="addingUser">Add</button>
       </div>
     </div>
     <div class="list">
@@ -26,7 +26,7 @@
   </div>
 </template>
 <script>
-  import { ref } from "@vue/reactivity";
+  import { ref, computed } from "@vue/reactivity";
   import { gettingUsers } from "./composables/getUsers";
   import { addUser } from "./composables/addUser";
   import { deleteUser } from "./composables/deleteUser";
@@ -46,11 +46,16 @@
         deleteUser(data);
       }
 
+      const currentUser = computed(()=> {
+        return users.value.filter(user => user.id === 1)
+      })
+
       return {
         users,
         input,
         addingUser,
         deletingUser,
+        currentUser
       };
     },
   };
