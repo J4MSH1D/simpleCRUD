@@ -24,7 +24,6 @@ const store = createStore({
       try {
         const res = await axios.get("users");
         context.commit("setUsers", res.data);
-        console.log(res.data);
       } catch (e) {
         context.commit("setUsers", e.message);
       }
