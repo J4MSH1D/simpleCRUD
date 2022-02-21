@@ -13,6 +13,9 @@ const store = createStore({
     },
     addedUser(state, payload) {
       state.users.push(payload);
+    },
+    deleteUser(state, payload) {
+      state.users.splice(payload, 1)
     }
   },
   actions: {
@@ -35,6 +38,15 @@ const store = createStore({
         context.commit("addedUser", res.data)
       } catch(err) {
         context.commit("setUsers", payload);
+      }
+    },
+    async deleteUser(context, payload) {
+      try {
+        let id = payload._value
+        await axios.delete("users/"+id)
+        context.commit("deleteUser", id)
+      } catch(err) {
+        console.log(err.message)
       }
     }
   },
