@@ -20,14 +20,19 @@ const store = createStore({
       try {
         const res = await axios.get("users");
         context.commit("setUsers", res.data);
+        console.log(res.data);
       } catch (e) {
         context.commit("setUsers", e.message);
       }
     },
     async addUser(context, payload) {
       try {
-        await axios.post("users", payload);
-        context.commit("addedUser", payload)
+        const form = {
+          fullname: payload._value,
+          id: null
+        }
+        const res = await axios.post("users",form);
+        context.commit("addedUser", res.data)
       } catch(err) {
         context.commit("setUsers", payload);
       }
