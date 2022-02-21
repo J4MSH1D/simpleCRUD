@@ -7,7 +7,7 @@
     <div class="list">
       <div v-if="users" >
         <div>id</div>
-        <div class="listOfUsersName">Name</div>
+        <div class="listOfUsersName">Name of the user</div>
         <div class="listOfUsersButtons">Buttons</div>
       </div>
       <div v-for="user in users" :key="user.id" class="listOfUsers">
