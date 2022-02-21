@@ -1,18 +1,23 @@
 <template>
   <div class="app">
     <div class="form">
-      <div><label for="name">Name</label><input type="text" id="name" v-model="input"></div>
-      <div><button @click="addingUser">add</button></div>
+      <div>
+        <label for="name">Name</label>
+        <input type="text" id="name" v-model="input" />
+      </div>
+      <div>
+        <button @click="addingUser">add</button>
+      </div>
     </div>
     <div class="list">
-      <div v-if="users" >
+      <div v-if="users">
         <div>id</div>
         <div class="listOfUsersName">Name of the user</div>
         <div class="listOfUsersButtons">Buttons</div>
       </div>
       <div v-for="user in users" :key="user.id" class="listOfUsers">
-        <div>{{user.id}}</div>
-        <div class="listOfUsersName">{{user.fullname}}</div>
+        <div>{{ user.id }}</div>
+        <div class="listOfUsersName">{{ user.fullname }}</div>
         <div class="listOfUsersButtons">
           <button @click="deletingUser(user.id)">Delete</button>
         </div>
@@ -21,33 +26,32 @@
   </div>
 </template>
 <script>
-import { ref } from "@vue/reactivity"
-import { gettingUsers } from "./composables/getUsers"
-import { addUser } from "./composables/addUser"
-import { deleteUser } from "./composables/deleteUser"
+  import { ref } from "@vue/reactivity";
+  import { gettingUsers } from "./composables/getUsers";
+  import { addUser } from "./composables/addUser";
+  import { deleteUser } from "./composables/deleteUser";
   export default {
     name: "App",
-    setup(){
-      const { users }  = gettingUsers()
+    setup() {
+      const { users } = gettingUsers();
 
-      const input = ref("")
+      const input = ref("");
 
       function addingUser() {
-        addUser(input)
-        input.value = ""
+        addUser(input);
+        input.value = "";
       }
 
       function deletingUser(data) {
-        deleteUser(data)
+        deleteUser(data);
       }
 
       return {
         users,
         input,
         addingUser,
-        deletingUser
-      }
-    }
-  }
-
+        deletingUser,
+      };
+    },
+  };
 </script>
