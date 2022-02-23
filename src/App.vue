@@ -25,6 +25,7 @@
     </div>
   </div>
 </template>
+
 <script>
   import { ref, computed } from "@vue/reactivity";
   import { gettingUsers } from "./composables/getUsers";
